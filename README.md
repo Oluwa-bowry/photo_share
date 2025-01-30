@@ -1,4 +1,4 @@
-# PHOTO SHARE APP
+# PHOTO SHARING APP
 
 ## Features Implemented
 
