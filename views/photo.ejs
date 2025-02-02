@@ -1,26 +1,34 @@
-<%- include('partials/header'); %>
-  
-<body class="is-preload">
-<%- include('partials/navbar'); %>
-  <!-- Main -->
-  <div class="container">
-    <form action="/images" method="POST" enctype="multipart/form-data">
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label for="title">Title</label>
-          <input type="text" class="form-control" id="title" name="title" required/>
-        </div>
-        <br />
-        <div class="form-group floating-label-form-group controls">
-          <label for="photo">Image</label>
-          <input type="file" class="form-control" id="photo" name="photo" accept="image/jpeg, image/jpg, image/png, image/gif" required/>
-        </div>
-        <br />
-        <div class="form-group">
-          <button type="submit" class btn btn-primary id="sendMessaageButton">
-            Upload
-          </button>
-        </div>
-  </div>
+<%- include('partials/header'); %> <!-- Include the header partial for consistent page structure -->
 
-<%-include('partials/footer'); %>
+<body class="is-preload"> 
+
+<%- include('partials/navbar'); %> <!-- Include the navbar partial for navigation -->
+
+<!-- Main -->
+<div class="container">
+  <form action="/images" method="POST" enctype="multipart/form-data"> <!-- Form submits an image using multipart/form-data for file uploads -->
+    <div class="control-group">
+      
+      <div class="form-group floating-label-form-group controls">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" required/> <!-- Title input field is required to ensure metadata for the image -->
+      </div>
+      <br />
+
+      <div class="form-group floating-label-form-group controls">
+        <label for="photo">Image</label>
+        <input type="file" class="form-control" id="photo" name="photo" accept="image/jpeg, image/jpg, image/png, image/gif" required/> 
+        <!-- File input for image upload with accepted formats restricted to JPEG, JPG, PNG, and GIF -->
+      </div>
+      <br />
+
+      <div class="form-group">
+        <button type="submit" class btn btn-primary id="sendMessaageButton">
+          Upload
+        </button> <!-- Submit button for form submission -->
+      </div>
+    </div>
+  </form>
+</div>
+
+<%- include('partials/footer'); %>

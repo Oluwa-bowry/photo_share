@@ -1,31 +1,45 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Kinsta</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="/">Kinsta</a> 
+    <!-- Brand logo that links to the homepage -->
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> 
+    <!-- Responsive navbar toggle button for mobile views -->
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <% if(loggedIn){ %>
+
+        <% if(loggedIn){ %> 
+        <!-- Show 'Add Photo' option only if user is logged in -->
         <li class="nav-item">
           <a class="nav-link" href="/photo">Add Photo</a>
         </li>
         <% } %>
-        <% if(!loggedIn){ %>
+
+        <% if(!loggedIn){ %> 
+        <!-- Show 'Login' option only if user is not logged in -->
         <li class="nav-item">
           <a class="nav-link" href="/login">Login</a>
         </li>
         <% } %>
-        <% if(loggedIn){ %>
+
+        <% if(loggedIn){ %> 
+        <!-- Show 'Logout' option only if user is logged in -->
         <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
         </li>
         <% } %>
-        <% if(!loggedIn){ %>
+
+        <% if(!loggedIn){ %> 
+        <!-- Show 'Signup' option only if user is not logged in -->
         <li class="nav-item">
           <a class="nav-link" href="/signup">Signup</a>
         </li>
         <% } %>
+
       </ul>
     </div>
   </div>

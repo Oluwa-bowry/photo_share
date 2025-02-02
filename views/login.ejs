@@ -1,29 +1,37 @@
-<%- include('partials/header'); %>
-  <%- include('partials/navbar'); %>
-</body>
-  <!-- Main -->
-  <div class="container">
-    <% if (data) { %>
-      <%= "Wrong Credentials" %>
-    <% } %>
-    <h1>Log in</h1>
-    <form action="/users/login" method="POST" enctype="application/json">
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" required/>
-        </div>
-        <br />
-        <div class="form-group floating-label-form-group controls">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" required/>
-        </div>
-        <br />
-        <div class="form-group">
-          <button type="submit" class btn btn-primary id="sendMessaageButton">
-            login
-          </button>
-        </div>
-  </div>
+<%- include('partials/header'); %> <!-- Include the header partial for consistent layout and metadata -->
+<%- include('partials/navbar'); %> <!-- Include the navbar partial for navigation -->
 
-<%-include('partials/footer'); %>
+</body> 
+
+<!-- Main -->
+<div class="container">
+  <% if (data) { %> <!-- Check if 'data' exists,  -->
+    <%= "Wrong Credentials" %> <!-- Hardcoded error message -->
+  <% } %>
+
+  <h1>Log in</h1>
+
+  <form action="/users/login" method="POST" enctype="application/json"> <!-- form submission -->
+    <div class="control-group">
+      <div class="form-group floating-label-form-group controls">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" required/> <!-- Required attribute ensures the field is not empty -->
+      </div>
+      <br />
+
+      <div class="form-group floating-label-form-group controls">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required/> <!-- Password field with required validation -->
+      </div>
+      <br />
+
+      <div class="form-group">
+        <button type="submit" class btn btn-primary id="sendMessaageButton"> 
+          login <!-- Button text should be capitalized for consistency -->
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<%- include('partials/footer'); %> <!-- Include the footer partial for consistent layout -->

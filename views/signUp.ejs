@@ -1,31 +1,47 @@
-<%- include('partials/header'); %>
-  <%- include('partials/navbar'); %>
-</body>
-  <!-- Main -->
-  <div class="container">
-    <h1>Sign up</h1>
-    <form action="/users/signUp" method="POST" enctype="application/json">
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" required/>
-        </div>
-        <br />
-        <div class="form-group floating-label-form-group controls">
-          <label for="email">email</label>
-          <input type="email" class="form-control" id="email" name="email" required/>
-        </div>
-        <br />
-        <div class="form-group floating-label-form-group controls">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" required/>
-        </div>
-        <br />
-        <div class="form-group">
-          <button type="submit" class btn btn-primary id="sendMessaageButton">
-            Signup
-          </button>
-        </div>
-  </div>
+<%- include('partials/header'); %> <!-- Include the header partial for consistent metadata and styles -->
+<%- include('partials/navbar'); %> <!-- Include the navbar partial for navigation -->
 
-<%-include('partials/footer'); %>
+</body> 
+
+<!-- Main -->
+<div class="container">
+  <h1>Sign up</h1>
+
+  <form action="/users/signUp" method="POST" enctype="application/json"> 
+    <!-- Form sends user signup data to '/users/signUp' using POST method -->
+    
+    <div class="control-group">
+      
+      <div class="form-group floating-label-form-group controls">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" required/> 
+        <!-- Username field, required for user registration -->
+      </div>
+      <br />
+
+      <div class="form-group floating-label-form-group controls">
+        <label for="email">email</label>
+        <input type="email" class="form-control" id="email" name="email" required/>
+        <!-- Email field with 'email' type for validation -->
+      </div>
+      <br />
+
+      <div class="form-group floating-label-form-group controls">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required/>
+        <!-- Password field, required for authentication -->
+      </div>
+      <br />
+
+      <div class="form-group">
+        <button type="submit" class btn btn-primary id="sendMessaageButton">
+          Signup
+        </button> 
+        <!-- Submit button to send signup data -->
+      </div>
+      
+    </div>
+  </form>
+</div>
+
+<%- include('partials/footer'); %> 
